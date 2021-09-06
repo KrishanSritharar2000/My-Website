@@ -15,6 +15,8 @@ import {
 } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
+import Button from '../../styles/GlobalComponents/Button';
+
 
 const Projects = () => (
   <Section nopadding id="projects">
@@ -38,8 +40,8 @@ const Projects = () => (
             </TagList>
           </div>
           <UtilityList>
-            <ExternalLinks href={url}>Code</ExternalLinks>
-            <ExternalLinks href={live}>Live App</ExternalLinks>
+            <Button alt href={url}>Code</Button>
+            <Button alt href={live}>Live App</Button>
           </UtilityList>
         </BlogCard>
       ))}

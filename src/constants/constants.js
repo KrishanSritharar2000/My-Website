@@ -42,7 +42,7 @@ export const projects = [
     id: 2,
     title: 'Royal Chat',
     description:
-      '[RoyalChat - IC Hack 20 Project] A real-time messaging web app designed to anonymously link people together on a predetermined topic without fear of judgement but also without fear of being trolled.',
+      '[RoyalChat - IC Hack 20 Project] A real-time messaging web app designed to link people together anonymously on a predetermined topic without fear of judgement or trolled.',
     commits: 122,
     branches: 1,
     image: '/images/1.png',
@@ -66,7 +66,7 @@ export const projects = [
     id: 4,
     title: 'Royal Chat',
     description:
-      '[RoyalChat - IC Hack 20 Project] A real-time messaging web app designed to anonymously link people together on a predetermined topic without fear of judgement but also without fear of being trolled.',
+      '[RoyalChat - IC Hack 20 Project] A real-time messaging web app designed to link people together anonymously on a predetermined topic without fear of judgement or trolled.',
     commits: 122,
     branches: 1,
     image: '/images/1.png',

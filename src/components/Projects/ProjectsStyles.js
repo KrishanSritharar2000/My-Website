@@ -10,7 +10,7 @@ export const Img = styled.img`
 export const GridContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: row;
+  // grid-auto-flow: row;
   overflow-y: auto;
   overflow-x: auto;
   padding: 3rem;
