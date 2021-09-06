@@ -95,4 +95,22 @@ export const repos: Respository[] = [
     languages: ['C', 'Makefile'],
     url: 'https://github.com/KrishanSritharar2000/CFlow',
   },
+  {
+    name: 'Royal Chat',
+    description:
+      '[RoyalChat - IC Hack 20 Project] A real-time messaging web app designed to anonymously link people together on a predetermined topic without fear of judgement but also without fear of being trolled.',
+    commits: 122,
+    branches: 1,
+    languages: ['Python', 'Go', 'HTML'],
+    url: 'https://github.com/ICHACK2020/Royal-Chat',
+  },
+  {
+    name: 'CFlow',
+    description:
+      'A TensorFlow equivalent library written from scratch in C. Developers can use CFlow to make neural networks with many input and output heads.',
+    commits: 58,
+    branches: 1,
+    languages: ['C', 'Makefile'],
+    url: 'https://github.com/KrishanSritharar2000/CFlow',
+  },
 ];

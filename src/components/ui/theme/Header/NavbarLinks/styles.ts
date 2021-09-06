@@ -46,3 +46,22 @@ export const Wrapper = styled.div<WrapperProps>`
 			}
 	`}
 `;
+
+export const SocialIcons = styled.a`
+  transition: 0.3s ease;
+  color: white;
+  margin-right: 0px;
+  border-radius: 50px;
+  padding: 8px;
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+`;
+
+export const Div3 = styled.div`
+  grid-area: 1 / 5 / 2 / 6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
