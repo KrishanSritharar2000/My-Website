@@ -19,7 +19,9 @@ export const Container = styled.div`
 `;
 
 export const Span = styled.span`
-  font-size: 2rem;
+  font-size: 2.5rem;
+	margin-left: 10px;
+	margin-bottom: 20px;
 `;
 
 export const Div1 = styled.div`

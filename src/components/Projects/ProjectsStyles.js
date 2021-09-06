@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Img = styled.img`
   width: 100%;
-  height: 100%;
+  // height: 100%;
+	height: 250px;
   object-fit: cover;
   overflow: hidden;
 `;
@@ -12,7 +13,7 @@ export const GridContainer = styled.section`
   grid-template-columns: repeat(3, 1fr);
   // grid-auto-flow: row;
   overflow-y: auto;
-  overflow-x: auto;
+  overflow-x: scroll;
   padding: 3rem;
   place-items: center;
   column-gap: 2rem;

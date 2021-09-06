@@ -5,22 +5,14 @@ import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 import { useEffect, useRef } from "react";
 import Typed from 'typed.js'
+import {typingStrings} from '../../constants/constants.js'
 
 const Hero = (props) => {
 	const el = useRef(null);
 
 	useEffect(() => {
 		const typed = new Typed(el.current, {
-			strings: [
-				"Hello ツ",
-				"Welcome to my website",
-				"I am Krishan",
-				"I am a Software Engineer",
-				"I am a Web Developer",
-				"I am an App Developer",
-				"I am a Teaching Assistant",
-				"I am an all rounder Computer Scientist",
-			],
+			strings: typingStrings,
 			startDelay: 750,
 			typeSpeed: 100,
 			backSpeed: 80,

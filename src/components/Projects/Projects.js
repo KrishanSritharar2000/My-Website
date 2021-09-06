@@ -31,8 +31,8 @@ const Projects = () => (
             <Hr />
           </TitleContent>
           <CardInfo>{description}</CardInfo>
-          <div>
-            <TitleContent>Stack</TitleContent>
+          <div style={{"margin-top":"10px"}}>
+            <TitleContent>Developed with</TitleContent>
             <TagList>
               {languages.map((item, i) => (
                 <Tag key={i}>{item}</Tag>
