@@ -20,6 +20,7 @@
     "react-icons": "^4.2.0",
     "react-google-recaptcha": "^2.1.0",
     "styled-components": "^5.2.3",
+		"styled-normalize": "^8.0.7",
     "yup": "^0.32.9"
   },
   "devDependencies": {

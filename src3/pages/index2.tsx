@@ -16,13 +16,4 @@ const HomePage = () => (
   </Layout>
 );
 
-export type Respository = {
-  name: string;
-  description: string;
-  commits: number;
-  branches: number;
-  languages: string[];
-  url: string;
-};
-
 export default HomePage;

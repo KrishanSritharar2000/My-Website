@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useTheme } from 'providers/ThemeProvider';
 import ToggleTheme from '..//ToggleTheme';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { Wrapper, SocialIcons, Div3 } from './styles';
+import { Wrapper, SocialIcons, NavLink } from './styles';
 import React from 'react';
 
 type NavbarLinksProps = {
@@ -15,29 +15,27 @@ const NavbarLinks = ({ desktop }: NavbarLinksProps) => {
   return (
     <Wrapper desktop={desktop} theme={theme}>
       <Link href="#about">
-        <a>About</a>
+        <NavLink>About</NavLink>
       </Link>
       <Link href="#projects">
-        <a>Projects</a>
+        <NavLink>Projects</NavLink>
       </Link>
       <Link href="#technologies">
-        <a>Technologies</a>
+        <NavLink>Technologies</NavLink>
       </Link>
       <Link href="#contact">
-        <a>Contact</a>
+        <NavLink>Contact</NavLink>
       </Link>
-      {/* <Div3> */}
       <SocialIcons>
         <ToggleTheme />
       </SocialIcons>
       <SocialIcons href="https://github.com/KrishanSritharar2000">
         <AiFillGithub size="2rem" />
+        {/* {{color:"white"}} */}
       </SocialIcons>
       <SocialIcons href="https://www.linkedin.com/in/krishan-sritharar">
         <AiFillLinkedin size="2rem" />
       </SocialIcons>
-
-      {/* </Div3> */}
     </Wrapper>
   );
 };

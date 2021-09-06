@@ -18,3 +18,7 @@ export const Brand = styled.a<BrandProps>`
     mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
   }
 `;
+
+export const Span = styled.span`
+  font-size: 2rem;
+`;
