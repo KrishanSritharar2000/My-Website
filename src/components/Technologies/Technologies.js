@@ -2,36 +2,16 @@ import React from 'react';
 import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
-import Chart from "react-apexcharts";
+import {languageChartState, frameworkChartState, toolsChartState} from '../../constants/charts.js'
+import dynamic from 'next/dynamic'
+
+const Chart = dynamic(
+  () => import('react-apexcharts'),
+  { ssr: false }
+)
 
 const Technologies = () => {
-	var state = {
-		options: {
-			chart: {
-				type: 'bar',
-				height: 350
-			},
-			plotOptions: {
-				bar: {
-					borderRadius: 4,
-					horizontal: true,
-				}
-			},
-			dataLabels: {
-				enabled: false
-			},
-			xaxis: {
-				categories: ['C', 'Java', 'Python', 'Golang', 'Haskell', 'Kotlin', 'JavaScript', 'HTML', 'CSS'
-				],
-			}
-		},
-		series: [
-			{
-				name: "series-1",
-				data: [30, 40, 45, 50, 49, 60, 70, 91]
-			}
-		]
-	};
+
 
 	return (
 		<Section id="technologies">
@@ -46,14 +26,13 @@ const Technologies = () => {
 					</picture>
 					<ListContainer>
 						<ListTitle>Languages</ListTitle>
-						{/* <ListParagraph> */}
 						<Chart
-							options={state.options}
-							series={state.series}
+							options={languageChartState.options}
+							series={languageChartState.series}
 							type="bar"
 							width="500"
+							height="350"
 						/>
-						{/* </ListParagraph> */}
 					</ListContainer>
 				</ListItem>
 
@@ -63,10 +42,13 @@ const Technologies = () => {
 					</picture>
 					<ListContainer>
 						<ListTitle>Frameworks</ListTitle>
-						<ListParagraph>
-							Experience with <br />
-							Node and Databases
-						</ListParagraph>
+						<Chart
+							options={frameworkChartState.options}
+							series={frameworkChartState.series}
+							type="radialBar"
+							width="500"
+							height="350"
+						/>
 					</ListContainer>
 				</ListItem>
 
@@ -76,10 +58,13 @@ const Technologies = () => {
 					</picture>
 					<ListContainer>
 						<ListTitle>Tools</ListTitle>
-						<ListParagraph>
-							Experience with <br />
-							Figma
-						</ListParagraph>
+						<Chart
+							options={toolsChartState.options}
+							series={toolsChartState.series}
+							type="bar"
+							width="500"
+							height="350"
+						/>
 					</ListContainer>
 				</ListItem>
 			</List>
