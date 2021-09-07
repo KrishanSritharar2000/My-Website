@@ -1,31 +1,45 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
-import {languageChartState, frameworkChartState, toolsChartState} from '../../constants/charts.js'
+import { languageChartState, frameworkChartState, toolsChartState } from '../../constants/charts.js'
 import dynamic from 'next/dynamic'
+import Glider, { GliderMethods } from 'react-glider';
+import { isMobile } from 'react-device-detect';
 
 const Chart = dynamic(
-  () => import('react-apexcharts'),
-  { ssr: false }
+	() => import('react-apexcharts'),
+	{ ssr: false }
 )
 
 const Technologies = () => {
-
-
+	const gliderRef = useRef(null);
+	var slidesToShow;
+	if (isMobile) {
+		slidesToShow = 1;
+	} else {
+		slidesToShow = 3;
+	}
 	return (
 		<Section id="technologies">
 			<SectionDivider />
 			<br />
 			<SectionTitle>Technologies</SectionTitle>
 			<SectionText>I have worked with a range on technologies.</SectionText>
-			<List>
-				<ListItem>
-					<picture>
-						<DiFirebase size="3rem" />
-					</picture>
+			<>
+				<Glider
+					slidesToScroll={1}
+					slidesToShow={slidesToShow}
+					draggable={true}
+					hasDots={true}
+					hasArrows={true}
+				>
 					<ListContainer>
-						<ListTitle>Languages</ListTitle>
+						<ListTitle>
+							<picture>
+								<DiFirebase size="3rem" />
+							</picture>Languages
+						</ListTitle>
 						<Chart
 							options={languageChartState.options}
 							series={languageChartState.series}
@@ -34,14 +48,13 @@ const Technologies = () => {
 							height="350"
 						/>
 					</ListContainer>
-				</ListItem>
 
-				<ListItem>
-					<picture>
-						<DiReact size="3rem" />
-					</picture>
 					<ListContainer>
-						<ListTitle>Frameworks</ListTitle>
+						<ListTitle>
+							<picture>
+								<DiReact size="3rem" />
+							</picture>Frameworks
+						</ListTitle>
 						<Chart
 							options={frameworkChartState.options}
 							series={frameworkChartState.series}
@@ -50,14 +63,13 @@ const Technologies = () => {
 							height="350"
 						/>
 					</ListContainer>
-				</ListItem>
 
-				<ListItem>
-					<picture>
-						<DiZend size="3rem" />
-					</picture>
 					<ListContainer>
-						<ListTitle>Tools</ListTitle>
+						<ListTitle>
+							<picture>
+								<DiZend size="3rem" />
+							</picture>Tools
+						</ListTitle>
 						<Chart
 							options={toolsChartState.options}
 							series={toolsChartState.series}
@@ -66,8 +78,9 @@ const Technologies = () => {
 							height="350"
 						/>
 					</ListContainer>
-				</ListItem>
-			</List>
+
+				</Glider>
+			</>
 		</Section>
 	);
 };
