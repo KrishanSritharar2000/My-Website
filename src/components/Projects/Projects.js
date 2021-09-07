@@ -18,6 +18,7 @@ import { projects } from '../../constants/constants';
 import Button from '../../styles/GlobalComponents/Button';
 import 'glider-js/glider.min.css';
 import Glider, { GliderMethods } from 'react-glider';
+import {isMobile} from 'react-device-detect';
 
 const PaneExample = ({ children, style, className }) => (
   <div className={`glider-slide ${className}`} style={style}>
@@ -27,12 +28,25 @@ const PaneExample = ({ children, style, className }) => (
 
 const Projects = () => {
   const gliderRef = useRef(null);
+	var slidesToShow;
+	if (isMobile) {
+		slidesToShow = 1;	
+	} else {
+		slidesToShow = 3;
+	}
   return (
     <Section nopadding id="projects">
       <SectionDivider />
       <SectionTitle main>Projects</SectionTitle>
       <>
-        <Glider ref={gliderRef} draggable slidesToShow={5} dots={'.dots'}>
+        {/* <Glider ref={gliderRef} draggable={true} hasDots={true} hasArrows={true} */}
+				<Glider
+          slidesToScroll={1}
+          slidesToShow={slidesToShow}
+          draggable={true}
+          hasDots={true}
+          hasArrows={true}
+        >
           {projects.map(({ id, image, title, description, commits, branches, languages, url, live }) => (
             <BlogCard key={id}>
               <Img src={image} />
