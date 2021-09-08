@@ -1,4 +1,6 @@
 export const typingStrings = [
+	"I am a Teaching Assistant",
+	"I am an all rounder Computer Scientist",
 		"Hello ツ",
 		"Welcome to my website",
 		"I am Krishan",
