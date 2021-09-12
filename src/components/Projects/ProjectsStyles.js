@@ -107,17 +107,20 @@ export const TagList = styled.ul`
   display: flex;
   justify-content: space-around;
   padding: 2rem;
+	padding-top: 1rem;
 `;
 export const Tag = styled.li`
-  color: #d8bfbf;
+	display: flex;
+	align-items: center;
+  color: black;
   font-size: 1.5rem;
 `;
 
 export const ProjectCard = styled.div`
 	display: grid;
 	grid-template-columns: 350px;
-	grid-template-rows: 210px 210px 80px;
-	grid-template-areas: "image" "body" "languages";
+	grid-template-rows: 210px 150px 60px 80px;
+	grid-template-areas: "image" "body" "languages" "buttons";
 
 
 	border-radius: 18px;
@@ -141,22 +144,28 @@ export const CardBody = styled.div`
 `;
 
 export const CardTitle = styled.h2`
-	margin: 25px;
+	// margin: 25px;
 	font-size:28px;
+	color:black
 `;
 
 export const CardDescription = styled.p`
 	color: grey;
 	font-size:15px;
 	font-weight: 300;
+	color: black
 `;
 
 export const CardLangauges = styled.div`
 	grid-area: languages;
+	background-color: green;
+	// background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+`;
+
+export const CardButtons = styled.div`
+	grid-area: buttons;
 	background-color: blue;
 	border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 	// background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
-
-
-`;
+`
