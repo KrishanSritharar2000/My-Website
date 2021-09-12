@@ -38,6 +38,7 @@ export const BlogCard = styled.div`
     width: 100%;
   }
 `;
+
 export const TitleContent = styled.div`
   text-align: center;
   z-index: 20;
@@ -110,4 +111,52 @@ export const TagList = styled.ul`
 export const Tag = styled.li`
   color: #d8bfbf;
   font-size: 1.5rem;
+`;
+
+export const ProjectCard = styled.div`
+	display: grid;
+	grid-template-columns: 350px;
+	grid-template-rows: 210px 210px 80px;
+	grid-template-areas: "image" "body" "languages";
+
+
+	border-radius: 18px;
+	// box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+	font-family: roboto;
+	text-align: center;
+`;
+
+export const CardImage = styled.div`
+	grid-area: image;
+	background: url(${(props) => (props.imgSrc)});
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+`;
+
+export const CardBody = styled.div`
+	grid-area: body;
+	background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+
+`;
+
+export const CardTitle = styled.h2`
+	margin: 25px;
+	font-size:28px;
+`;
+
+export const CardDescription = styled.p`
+	color: grey;
+	font-size:15px;
+	font-weight: 300;
+`;
+
+export const CardLangauges = styled.div`
+	grid-area: languages;
+	background-color: blue;
+	border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+	// background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+
+
 `;
