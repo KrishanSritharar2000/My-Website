@@ -123,7 +123,7 @@ export const ProjectCard = styled.div`
   grid-template-columns: 350px;
   grid-template-rows: 210px 230px 60px;
   grid-template-areas: 'image' 'body' 'buttons';
-
+	// margin-left: 20px;
   border-radius: 18px;
   // box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   font-family: roboto;
