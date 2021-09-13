@@ -1,26 +1,24 @@
 import React, { useRef } from 'react';
 
 import {
-	BlogCard,
-	CardInfo,
-	ExternalLinks,
-	GridContainer,
-	HeaderThree,
-	Hr,
-	Tag,
-	TagList,
-	TitleContent,
-	UtilityList,
-	Img,
-
-	ProjectCard,
-	CardImage,
-	CardBody,
-	CardTitle,
-	CardDescription,
-	CardLangauges,
-	HoverEffectButton
-
+  BlogCard,
+  CardInfo,
+  ExternalLinks,
+  GridContainer,
+  HeaderThree,
+  Hr,
+  Tag,
+  TagList,
+  TitleContent,
+  UtilityList,
+  Img,
+  ProjectCard,
+  CardImage,
+  CardBody,
+  CardTitle,
+  CardDescription,
+  CardLangauges,
+  HoverEffectButton,
 } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
@@ -28,82 +26,68 @@ import Button from '../../styles/GlobalComponents/Button';
 import 'glider-js/glider.min.css';
 import Glider, { GliderMethods } from 'react-glider';
 import { useMediaPredicate } from 'react-media-hook';
-import { RiGitRepositoryCommitsLine } from "react-icons/ri";
-import { BiTimeFive, BiGitBranch } from "react-icons/bi";
-import { BsPeopleFill } from "react-icons/bs";
-
+import { RiGitRepositoryCommitsLine } from 'react-icons/ri';
+import { BiTimeFive, BiGitBranch } from 'react-icons/bi';
+import { BsPeopleFill } from 'react-icons/bs';
+import Tilt from 'react-parallax-tilt';
 
 const Projects = () => {
-	const gliderRef = useRef(null);
-	var slidesToShow;
-	const small = useMediaPredicate('(max-width:640px)');
-	const medium = useMediaPredicate('(max-width:1024px)');
+  const gliderRef = useRef(null);
+  var slidesToShow;
+  const small = useMediaPredicate('(max-width:640px)');
+  const medium = useMediaPredicate('(max-width:1024px)');
 
-	if (small) {
-		slidesToShow = 1;
-	} else if (medium) {
-		slidesToShow = 2;
-	} else {
-		slidesToShow = 3;
-	}
-	return (
-		<Section nopadding id="projects">
-			<SectionDivider />
-			<SectionTitle main>Projects</SectionTitle>
-			<>
-				<Glider slidesToScroll={1}
-					slidesToShow={slidesToShow}
-					draggable={false}
-					hasDots={true}
-					hasArrows={true}>
-					{
-						projects.map(({
-							id,
-							image,
-							title,
-							description,
-							commits,
-							branches,
-							languages,
-							url,
-							live
-						}) => (
-							<ProjectCard>
-								<CardImage imgSrc={image}></CardImage>
-								<CardBody>
-									<div style={{ gridArea: "bodyText" }}>
-										<Stats commits={commits}
-											branches={branches}
-											time="2 Months"
-											people={1} />
-										<CardTitle>{title}</CardTitle>
-										<CardDescription>{description}</CardDescription>
-									</div>
-									<CardLangauges>
-										<h5 style={
-											{
-												'font-weight': 'bold',
-												'padding-top': 5,
-												'font-size': '1.5rem',
-												'color': 'black'
-											}
-										}>Developed with</h5>
-										<TagList> {
-											languages.map((item, i) => (
-												<Tag key={i}>
-													{item}</Tag>
-											))
-										} </TagList>
-									</CardLangauges>
-								</CardBody>
+  if (small) {
+    slidesToShow = 1;
+  } else if (medium) {
+    slidesToShow = 2;
+  } else {
+    slidesToShow = 3;
+  }
+  return (
+    <Section nopadding id="projects">
+      <SectionDivider />
+      <SectionTitle main>Projects</SectionTitle>
+      <>
+        <Glider slidesToScroll={1} slidesToShow={slidesToShow} draggable={false} hasDots={true} hasArrows={true}>
+          {projects.map(({ id, image, title, description, commits, branches, languages, url, live }) => (
+            <Tilt className="Tilt" scale={0.92}>
+              <ProjectCard>
+                <CardImage imgSrc={image}></CardImage>
+                <CardBody>
+                  <div style={{ gridArea: 'bodyText' }}>
+                    <Stats commits={commits} branches={branches} time="2 Months" people={1} />
+                    <CardTitle>{title}</CardTitle>
+                    <CardDescription>{description}</CardDescription>
+                  </div>
+                  <CardLangauges>
+                    <h5
+                      style={{
+                        'font-weight': 'bold',
+                        'padding-top': 5,
+                        'font-size': '1.5rem',
+                        color: 'black',
+                      }}
+                    >
+                      Developed with
+                    </h5>
+                    <TagList>
+                      {' '}
+                      {languages.map((item, i) => (
+                        <Tag key={i}>{item}</Tag>
+                      ))}{' '}
+                    </TagList>
+                  </CardLangauges>
+                </CardBody>
 
-								<CardButtons />
-							</ProjectCard>
-						))
-					} </Glider>
-			</>
-		</Section>
-	);
+                <CardButtons />
+              </ProjectCard>
+            </Tilt>
+          ))}{' '}
+        </Glider>
+      </>
+    </Section>
+  );
 };
 
 // <BlogCard key={id}>
@@ -132,66 +116,58 @@ const Projects = () => {
 // </BlogCard> <ProjectCard> <CardImage imgSrc={image}></CardImage>
 
 function Stats(props) {
-	const iconStyle = {
-		color: "black",
-		fontSize: "1.2em",
-		marginRight: "5px"
-	}
-	const textStyle = {
-		color: "black"
-	}
-	return (
-		<ul style={
-			{
-				display: 'flex',
-				justifyContent: 'space-around',
-				padding: '5px 20px 5px 20px'
-			}
-		}>
-			<Tag><RiGitRepositoryCommitsLine style={iconStyle} />
-				<span style={textStyle}>
-					{
-						props.commits
-					}</span>
-			</Tag>
-			<Tag><BiGitBranch style={iconStyle} />
-				<span style={textStyle}>
-					{
-						props.branches
-					}</span>
-			</Tag>
-			<Tag><BiTimeFive style={iconStyle} />
-				<span style={textStyle}>
-					{
-						props.time
-					}</span>
-			</Tag>
-			<Tag><BsPeopleFill style={iconStyle} />
-				<span style={textStyle}>
-					{
-						props.people
-					}</span>
-			</Tag>
-		</ul>
-	);
+  const iconStyle = {
+    color: 'black',
+    fontSize: '1.2em',
+    marginRight: '5px',
+  };
+  const textStyle = {
+    color: 'black',
+  };
+  return (
+    <ul
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        padding: '5px 20px 5px 20px',
+      }}
+    >
+      <Tag>
+        <RiGitRepositoryCommitsLine style={iconStyle} />
+        <span style={textStyle}>{props.commits}</span>
+      </Tag>
+      <Tag>
+        <BiGitBranch style={iconStyle} />
+        <span style={textStyle}>{props.branches}</span>
+      </Tag>
+      <Tag>
+        <BiTimeFive style={iconStyle} />
+        <span style={textStyle}>{props.time}</span>
+      </Tag>
+      <Tag>
+        <BsPeopleFill style={iconStyle} />
+        <span style={textStyle}>{props.people}</span>
+      </Tag>
+    </ul>
+  );
 }
 
 function CardButtons() {
-	const containerStyle = {
-		gridArea: "buttons",
-		backgroundColor: "blue",
-		borderBottomLeftRadius: "15px",
-		borderBottomRightRadius: "15px",
-		display: 'flex',
-		justifyContent: 'space-around'
-	}
+  const containerStyle = {
+    gridArea: 'buttons',
+    backgroundColor: 'blue',
+    borderBottomLeftRadius: '15px',
+    borderBottomRightRadius: '15px',
+    display: 'flex',
+    justifyContent: 'space-around',
+  };
 
-	return (
-		<ul style={containerStyle}>
-			<HoverEffectButton left >Code</HoverEffectButton>
-			<HoverEffectButton right >Live App</HoverEffectButton>
-		</ul>
-	);
+  return (
+    <ul style={containerStyle}>
+      <HoverEffectButton left>Code</HoverEffectButton>
+      <HoverEffectButton right>Live App</HoverEffectButton>
+    </ul>
+  );
 }
 
 export default Projects;
