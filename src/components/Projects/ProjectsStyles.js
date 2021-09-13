@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Img = styled.img`
   width: 100%;
   // height: 100%;
-	height: 250px;
+  height: 250px;
   object-fit: cover;
   overflow: hidden;
 `;
@@ -29,10 +29,10 @@ export const BlogCard = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
-	margin-right: 20px;
-	margin-left: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 450px;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
@@ -107,65 +107,106 @@ export const TagList = styled.ul`
   display: flex;
   justify-content: space-around;
   padding: 2rem;
-	padding-top: 1rem;
+  padding-top: 1rem;
 `;
 export const Tag = styled.li`
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
   color: black;
   font-size: 1.5rem;
 `;
 
 export const ProjectCard = styled.div`
-	display: grid;
-	grid-template-columns: 350px;
-	grid-template-rows: 210px 150px 60px 80px;
-	grid-template-areas: "image" "body" "languages" "buttons";
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 210px 170px 60px 60px;
+  grid-template-areas: 'image' 'body' 'languages' 'buttons';
 
-
-	border-radius: 18px;
-	// box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-	font-family: roboto;
-	text-align: center;
+  border-radius: 18px;
+  // box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: roboto;
+  text-align: center;
 `;
 
 export const CardImage = styled.div`
-	grid-area: image;
-	background: url(${(props) => (props.imgSrc)});
+  grid-area: image;
+  background: url(${(props) => props.imgSrc});
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-size: cover;
 `;
 
 export const CardBody = styled.div`
-	grid-area: body;
-	background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
-
+  grid-area: body;
+  background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
 `;
 
 export const CardTitle = styled.h2`
-	// margin: 25px;
-	font-size:28px;
-	color:black
+  // margin: 25px;
+  font-size: 28px;
+  color: black;
 `;
 
 export const CardDescription = styled.p`
-	color: grey;
-	font-size:15px;
-	font-weight: 300;
-	color: black
+  color: grey;
+  font-size: 15px;
+  font-weight: 300;
+  color: black;
 `;
 
 export const CardLangauges = styled.div`
-	grid-area: languages;
-	background-color: green;
-	// background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+  grid-area: languages;
+  background-color: green;
+  // background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
 `;
 
 export const CardButtons = styled.div`
-	grid-area: buttons;
-	background-color: blue;
-	border-bottom-left-radius: 15px;
+  grid-area: buttons;
+  background-color: blue;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-	// background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
-`
+  // background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+`;
+
+export const HoverEffectButton = styled.button`
+	text-decoration: none;
+	border: 0px solid rgb(146, 148, 248);
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	border-bottom-left-radius: ${(props) => props.left ? "15px" : "0px"};
+	border-bottom-right-radius: ${(props) => props.right ? "15px" : "0px"};
+	color: white;
+	font-weight: bold;
+	background : ${(props) => props.left ? "linear-gradient(90deg, rgba(207,206,223,1) 0%, rgba(157,157,231,1) 31%, rgba(115,166,238,1) 54%, rgba(76,209,236,1) 100%)" :
+								"linear-gradient(90deg, rgba(76,209,236,1) 0%, rgba(115,166,238,1) 46%, rgba(157,157,231,1) 69%, rgba(207,206,223,1) 100%)"};
+	
+	&:hover {
+		// box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			120deg,
+			transparent,
+			// rgba(146, 148, 248, 0.4),
+			rgba(239,182,69,0.4),
+			transparent
+		);
+		transition: all 650ms;
+	}
+
+	&:hover:before {
+		left: 100%;
+	}
+`;
