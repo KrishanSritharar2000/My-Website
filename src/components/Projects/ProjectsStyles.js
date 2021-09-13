@@ -114,13 +114,15 @@ export const Tag = styled.li`
   align-items: center;
   color: black;
   font-size: 1.5rem;
+	font-family: 'Lato';
+	font-weight: 500;
 `;
 
 export const ProjectCard = styled.div`
   display: grid;
   grid-template-columns: 350px;
-  grid-template-rows: 210px 170px 60px 60px;
-  grid-template-areas: 'image' 'body' 'languages' 'buttons';
+  grid-template-rows: 210px 230px 60px;
+  grid-template-areas: 'image' 'body' 'buttons';
 
   border-radius: 18px;
   // box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
@@ -138,38 +140,31 @@ export const CardImage = styled.div`
 
 export const CardBody = styled.div`
   grid-area: body;
-  background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+	display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 170px 60px;
+  grid-template-areas: 'bodyText' 'bodyLanguages';
+	background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
 `;
 
 export const CardTitle = styled.h2`
-  // margin: 25px;
-  font-size: 28px;
+	grid-area: bodyText;
+  font-size: 2.5rem;
   color: black;
 `;
 
 export const CardDescription = styled.p`
+	margin: 10px 25px 0px 25px;
   color: grey;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 500;
   color: black;
+	font-family: 'Lato';
 `;
 
 export const CardLangauges = styled.div`
-  grid-area: languages;
-  background-color: green;
-  // background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
-`;
-
-export const CardButtons = styled.div`
-  grid-area: buttons;
-  background-color: blue;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  // background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-area: bodyLanguages;
+	// background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
 `;
 
 export const HoverEffectButton = styled.button`
@@ -182,10 +177,14 @@ export const HoverEffectButton = styled.button`
 	border-bottom-right-radius: ${(props) => props.right ? "15px" : "0px"};
 	color: white;
 	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+	transition: transform .4s;
 	background : ${(props) => props.left ? "linear-gradient(90deg, rgba(207,206,223,1) 0%, rgba(157,157,231,1) 31%, rgba(115,166,238,1) 54%, rgba(76,209,236,1) 100%)" :
 								"linear-gradient(90deg, rgba(76,209,236,1) 0%, rgba(115,166,238,1) 46%, rgba(157,157,231,1) 69%, rgba(207,206,223,1) 100%)"};
 	
 	&:hover {
+		font-size: 24px;
 		// box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
 	}
 
