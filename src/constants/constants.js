@@ -35,6 +35,8 @@ export const projects = [
 		branches: 15,
 		image: '/images/vioo.png',
 		languages: ['Flutter', 'Dart', 'PHP'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/KrishanSritharar2000/Modelling-Quantum-Gravity',
 		live: '',
 	},
@@ -47,6 +49,8 @@ export const projects = [
 		branches: 1,
 		image: '/images/1.png',
 		languages: ['Python', 'Processing'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/KrishanSritharar2000/Modelling-Quantum-Gravity',
 		live: '',
 	},
@@ -59,6 +63,8 @@ export const projects = [
 		branches: 1,
 		image: '/images/1.png',
 		languages: ['Python', 'Processing'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/KrishanSritharar2000/Modelling-Quantum-Gravity',
 		live: '',
 	},
@@ -71,6 +77,8 @@ export const projects = [
 		branches: 1,
 		image: '/images/1.png',
 		languages: ['Python'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/KrishanSritharar2000/Mental-Maths-Game',
 		live: '',
 	},
@@ -83,6 +91,8 @@ export const projects = [
 		branches: 1,
 		image: '/images/1.png',
 		languages: ['C', 'Makefile'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/KrishanSritharar2000/CFlow',
 		live: '',
 	},
@@ -95,6 +105,8 @@ export const projects = [
 		branches: 1,
 		image: '/images/1.png',
 		languages: ['Python', 'Go', 'HTML'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/ICHACK2020/Royal-Chat',
 		live: '',
 	},
@@ -107,6 +119,8 @@ export const projects = [
 		branches: 1,
 		image: '/images/1.png',
 		languages: ['Python', 'Processing'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/KrishanSritharar2000/Modelling-Quantum-Gravity',
 		live: '',
 	},
@@ -119,16 +133,9 @@ export const projects = [
 		branches: 1,
 		image: '/images/1.png',
 		languages: ['Python'],
+		time: '',
+		teamSize: '',
 		url: 'https://github.com/KrishanSritharar2000/Mental-Maths-Game',
 		live: '',
 	},
 ];
-
-// export type Respository = {
-//   title: string;
-//   description: string;
-//   commits: number;
-//   branches: number;
-//   languages: string[];
-//   url: string;
-// };

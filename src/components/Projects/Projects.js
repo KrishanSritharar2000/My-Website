@@ -32,6 +32,9 @@ import { BsPeopleFill } from 'react-icons/bs';
 import Tilt from 'react-parallax-tilt';
 
 const Projects = () => {
+
+
+
 	const gliderRef = useRef(null);
 	var slidesToShow;
 	const small = useMediaPredicate('(max-width:640px)');
@@ -45,18 +48,18 @@ const Projects = () => {
 		slidesToShow = 3;
 	}
 	return (
-		<Section nopadding id="projects">
+		<Section id="projects">
 			<SectionDivider />
 			<SectionTitle main>Projects</SectionTitle>
 			<>
-				<Glider style={{ margin: "10px", }} slidesToScroll={1} slidesToShow={slidesToShow} draggable={false} hasDots={true} hasArrows={true}>
-					{projects.map(({ id, image, title, description, commits, branches, languages, url, live }) => (
+				<Glider style={{ margin: "10px", }} slidesToScroll={1} slidesToShow={slidesToShow} draggable={true} hasDots={true} hasArrows={true}>
+					{projects.map(({ id, image, title, description, commits, branches, languages, url, live, time, teamSize }) => (
 						<Tilt className="Tilt" scale={0.92}>
 							<ProjectCard>
 								<CardImage imgSrc={image}></CardImage>
 								<CardBody>
 									<div style={{ gridArea: 'bodyText' }}>
-										<Stats commits={commits} branches={branches} time="2 Months" people={1} />
+										<Stats commits={commits} branches={branches} time={time} people={teamSize} />
 										<CardTitle>{title}</CardTitle>
 										<CardDescription>{description}</CardDescription>
 									</div>
@@ -80,7 +83,7 @@ const Projects = () => {
 									</CardLangauges>
 								</CardBody>
 
-								<CardButtons />
+								<CardButtons code={url} liveApp={live} />
 							</ProjectCard>
 						</Tilt>
 					))}{' '}
@@ -152,7 +155,7 @@ function Stats(props) {
 	);
 }
 
-function CardButtons() {
+function CardButtons(props) {
 	const containerStyle = {
 		gridArea: 'buttons',
 		backgroundColor: 'blue',
@@ -164,8 +167,8 @@ function CardButtons() {
 
 	return (
 		<ul style={containerStyle}>
-			<HoverEffectButton left>Code</HoverEffectButton>
-			<HoverEffectButton right>Live App</HoverEffectButton>
+			<HoverEffectButton onClick={() => (window.location = props.code)} left>Code</HoverEffectButton>
+			<HoverEffectButton onClick={() => (window.location = props.liveApp)} right>Live App</HoverEffectButton>
 		</ul>
 	);
 }
