@@ -55,12 +55,13 @@ export const SectionTitle = styled.h2`
 `;
 
 export const SectionText = styled.p`
-  max-width: 800px;
+  max-width: ${(props) => (props.noMaxWidth ? '' : '800px')};
   font-size: 24px;
   line-height: 40px;
   font-weight: 300;
   padding-bottom: 3.6rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${(props) => (props.bolder ? 'rgba(255, 255, 255, 0.85)' : 'rgba(255, 255, 255, 0.5)')};
+	;
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;
@@ -82,9 +83,9 @@ export const SectionDivider = styled.div`
   border-radius: 10px;
   background-color: #fff;
   background: ${(props) =>
-    props.colorAlt
-      ? 'linear-gradient(270deg, #F46737 0%, #945DD6 100%)'
-      : 'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
+		props.colorAlt
+			? 'linear-gradient(270deg, #F46737 0%, #945DD6 100%)'
+			: 'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
 
   margin: ${(props) => (props.divider ? '4rem 0' : '')};
 
@@ -178,7 +179,7 @@ export const ButtonBack = styled.div`
   margin: ${({ alt, form }) => (alt || form ? '0' : '0 0 80px')};
   color: #fff;
   background: ${({ alt }) =>
-    alt ? 'linear-gradient(270deg, #ff622e 0%, #B133FF 100%)' : 'linear-gradient(270deg, #00DBD8 0%, #B133FF 100%)'};
+		alt ? 'linear-gradient(270deg, #ff622e 0%, #B133FF 100%)' : 'linear-gradient(270deg, #00DBD8 0%, #B133FF 100%)'};
   cursor: pointer;
   transition: 0.5s ease;
   position: relative;
@@ -211,7 +212,7 @@ export const ButtonFront = styled.button`
   width: 100%;
   height: 100%;
   background: ${({ alt }) =>
-    alt ? 'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' : 'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
+		alt ? 'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' : 'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
   opacity: ${({ disabled }) => (disabled ? '.5' : '1')};
   transition: 0.4s ease;
   font-size: ${({ alt }) => (alt ? '20px' : '24px')};
@@ -220,7 +221,7 @@ export const ButtonFront = styled.button`
   justify-content: center;
   cursor: pointer;
   box-shadow: ${({ disabled }) =>
-    disabled ? 'inset 0px 2px 1px rgba(46, 49, 55, 0.15), inset 0px 0px 4px rgba(20, 20, 55, 0.3)' : 'none'};
+		disabled ? 'inset 0px 2px 1px rgba(46, 49, 55, 0.15), inset 0px 0px 4px rgba(20, 20, 55, 0.3)' : 'none'};
 
   &:hover {
     opacity: 0;
