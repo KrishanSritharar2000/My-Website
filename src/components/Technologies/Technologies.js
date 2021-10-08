@@ -34,7 +34,7 @@ const Technologies = () => {
           slidesToShow={slidesToShow}
           draggable={true}
           hasDots={slidesToShow != 3}
-          hasArrows={true}
+          hasArrows={slidesToShow != 3}
         >
           <ListContainer>
             <ListTitle>

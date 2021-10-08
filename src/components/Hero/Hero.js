@@ -35,10 +35,10 @@ const Hero = (props) => {
 				<SectionTitle main center style={{ zIndex: 10 }}>
 					<span ref={typing}></span>
 				</SectionTitle>
-				<SectionText style={{ paddingBottom: '15px', zIndex: 10, }}>
+				<SectionText style={{ paddingBottom: '15px', zIndex: 10, }} bolder>
 				I am an inquisitive, energetic 3rd year Computing student skilled in software design and development, with a strong foundation in maths, logic, and coding. 
 				</SectionText>
-				<SectionText>
+				<SectionText bolder>
 				Seeking to leverage solid skills, collaboration and development as a software engineer.
 				</SectionText>
 				<div style={{ paddingTop: '55px', }}>

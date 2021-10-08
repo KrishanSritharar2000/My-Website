@@ -1,6 +1,6 @@
 import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-
+import { AiFillGithub, AiFillLinkedin, AiOutlineMail} from 'react-icons/ai';
+import { GoMail } from "react-icons/go";
 import { SocialIcons, Div3 } from '../Header/HeaderStyles';
 import {
   CompanyContainer,
@@ -19,22 +19,18 @@ const Footer = () => {
     <FooterWrapper>
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="">000 0000 0000</LinkItem>
-        </LinkColumn>
-        <LinkColumn>
           <LinkTitle>E-Mail</LinkTitle>
-          <LinkItem href="">krishan3168@gmail.com</LinkItem>
+          <LinkItem href="">krishan.sritharar19@imperial.ac.uk</LinkItem>
         </LinkColumn>
         <Div3>
-          <SocialIcons href="https://www.github.com">
+          <SocialIcons href="mailto:krishan.sritharar19@imperial.ac.uk">
+            <AiOutlineMail size="3rem" />
+          </SocialIcons>
+          <SocialIcons href="https://github.com/KrishanSritharar2000">
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://www.linkedin.com">
+          <SocialIcons href="https://www.linkedin.com/in/krishan-sritharar">
             <AiFillLinkedin size="3rem" />
-          </SocialIcons>
-          <SocialIcons href="https://www.instagram.com">
-            <AiFillInstagram size="3rem" />
           </SocialIcons>
         </Div3>
       </LinkList>

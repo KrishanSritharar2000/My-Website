@@ -10,18 +10,22 @@ export const typingStrings = [
 ];
 
 export const TimeLineData = [
-	{ year: 2017, text: 'Started my journey' },
-	{ year: 2018, text: 'Worked as a freelance developer' },
-	{ year: 2019, text: 'Founded JavaScript Mastery' },
-	{ year: 2020, text: 'Shared my projects with the world' },
-	{ year: 2021, text: 'Started my own platform' },
+	{ year: 2015, text: 'Started my journey by discovering programming using Kodu Game Lab' },
+	{ year: 2016, text: 'Created my first app: a Flappy Bird replica built using BuildBox' },
+	{ year: 2017, text: 'Achieved straight A*s at GCSE - Highest mark in my school' },
+	{ year: 2018, text: 'Developed a Monte Carlo Simulation for CREST project' },
+	// { year: 2019, text: 'Created a Mental Maths platformer game for helping student\'s learn' },
+	{ year: 2019, text: 'Started my Computing degree at Imperial College London' },
+	{ year: 2020, text: 'Started workin with the awesome concept of Concurrency' },
+	// { year: 2020, text: 'Attened my first Hackathon at IC Hack 20' },
+	{ year: 2021, text: 'Head of Mobile Development at Vioo Inc' },
 ];
 
 export const acomplishments = [
-	{ number: 20, text: 'Open Source Projects' },
-	{ number: 1000, text: 'Students' },
+	{ number: 'First Class Honours', text: 'in First and Second years of undergraduate degree' },
+	{ number: '1600+', text: 'Lifetime commits' },
 	{ number: 1900, text: 'Github Followers' },
-	{ number: 5000, text: 'Github Stars' },
+	{ number: '3 Students', text: 'I tutor for GCSE Maths, Computing and Physics' },
 ];
 
 // image: '/images/1.png',
@@ -44,10 +48,10 @@ export const projects = [
 		id: 1,
 		title: 'Tutor Me',
 		description:
-			'Online tutoring platform',
+			'Online Tutoring Platform web app created using JavaScript and Kotlin',
 		commits: 200,
 		branches: 1,
-		image: '/images/1.png',
+		image: '/images/tutorme.png',
 		languages: ['Python', 'Processing'],
 		time: '',
 		teamSize: '',
@@ -58,7 +62,7 @@ export const projects = [
 		id: 2,
 		title: 'WACC',
 		description:
-			'Compiler',
+			'Fully functional compiler written completely from scratch using Kotli',
 		commits: 50,
 		branches: 1,
 		image: '/images/1.png',
@@ -72,7 +76,7 @@ export const projects = [
 		id: 3,
 		title: 'PintOS',
 		description:
-			'Operating system developed using C',
+			'Concurrent, VM supported OS framework extended using C',
 		commits: 40,
 		branches: 1,
 		image: '/images/1.png',
@@ -100,7 +104,7 @@ export const projects = [
 		id: 5,
 		title: 'Royal Chat',
 		description:
-			'[RoyalChat - IC Hack 20 Project] A real-time messaging web app designed to link people together anonymously on a predetermined topic without fear of judgement or trolled.',
+			'A real-time messaging web app designed to link people together anonymously on a predetermined topic without fear of judgement or trolled.',
 		commits: 122,
 		branches: 1,
 		image: '/images/1.png',

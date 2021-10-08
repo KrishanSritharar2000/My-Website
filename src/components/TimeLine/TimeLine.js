@@ -46,15 +46,17 @@ const Timeline = () => {
 		<Section id="about">
 			<SectionTitle>About Me</SectionTitle>
 			<SectionText noMaxWidth bolder>
-			I am a penultimate year Computing student at Imperial College London with 5+ years programming experience. I have averaged a high First Class Honours ({'>'}80%) in my first 2 years with notably high marks in Algorthims Design and Analysis (95%) and Compilers (89%). I love tinkering with computers (hardware, software, networking, operating systems, you name the lot) and getting into the fun small details of how everything works.
+				I am a penultimate year Computing student at Imperial College London with 5+ years programming experience. I have averaged a high First Class Honours ({'>'}80%) in my first 2 years with notably high marks in Algorthims Design and Analysis (95%) and Compilers (89%). I love tinkering with computers (hardware, software, networking, operating systems, you name the lot) and getting into the fun small details of how everything works.
 			</SectionText>
 			<SectionText noMaxWidth bolder>
-				I have gained a lot of experience in the past few years, ranging from learning a lot of new programming languages and frameworks, becoming proficient in Git and its wonderful powers, gaining valuable large scale team working skills and making an in-production app that is being actively used by 3500+ users. Nothing can beat the rewarding feeling given by that last point.
+				I have gained a lot of experience in the past few years, ranging from learning a lot of new programming languages and frameworks, becoming proficient in Git and its wonderful powers, gaining valuable large scale team working skills and making an in-production app that is being actively used by 3500+ users.
 			</SectionText>
 			<SectionText noMaxWidth bolder>
+				Nothing can beat the rewarding feeling given by that last point.
+			</SectionText>
+			{/* <SectionText noMaxWidth bolder>
 				I am aspiring to gain more experience in the Software Engineering industry as I truly believe that there is no limit to what a single individual can achieve in this field.
-				The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
-			</SectionText>
+			</SectionText> */}
 			<CarouselContainer ref={carouselRef} onScroll={handleScroll}>
 				<>
 					{TimeLineData.map((item, index) => (
