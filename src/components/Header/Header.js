@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
 import { GoTerminal } from 'react-icons/go';
-
+import { mailAddressLink, gitHubAddress, linkedInAddress } from '../../constants/constants';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
 
 const Header = () => (
@@ -40,14 +40,14 @@ const Header = () => (
     </Div2>
 
     <Div3>
-      <SocialIcons href="https://www.github.com">
+      <SocialIcons href={mailAddressLink}>
+        <AiOutlineMail size="3rem" />
+      </SocialIcons>
+      <SocialIcons href={gitHubAddress}>
         <AiFillGithub size="3rem" />
       </SocialIcons>
-      <SocialIcons href="https://www.linkedin.com">
+      <SocialIcons href={linkedInAddress}>
         <AiFillLinkedin size="3rem" />
-      </SocialIcons>
-      <SocialIcons href="https://www.instagram.com">
-        <AiFillInstagram size="3rem" />
       </SocialIcons>
     </Div3>
   </Container>

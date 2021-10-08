@@ -9,6 +9,13 @@ export const typingStrings = [
 	"I am an all rounder Computer Scientist",
 ];
 
+export const mailAddressLink = "mailto:krishan.sritharar19@imperial.ac.uk";
+
+export const gitHubAddress = "https://github.com/KrishanSritharar2000";
+https://github.com/KrishanSritharar2000?tab=repositories";
+
+export const linkedInAddress = "https://www.linkedin.com/in/krishan-sritharar";
+
 export const TimeLineData = [
 	{ year: 2015, text: 'Started my journey by discovering programming using Kodu Game Lab' },
 	{ year: 2016, text: 'Created my first app: a Flappy Bird replica built using BuildBox' },
