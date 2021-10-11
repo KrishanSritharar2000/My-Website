@@ -9,6 +9,8 @@ export const typingStrings = [
 	"I am a Teaching Assistant",
 ];
 
+export const linkToCV = "/data/krishan_sritharar_cv.pdf";
+
 export const mailAddressLink = "mailto:krishan.sritharar19@imperial.ac.uk";
 
 export const gitHubAddress = "https://github.com/KrishanSritharar2000";

@@ -5,7 +5,7 @@ import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import { typingStrings } from '../../constants/constants.js';
+import { typingStrings, linkToCV } from '../../constants/constants.js';
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/coder';
 
@@ -44,7 +44,7 @@ const Hero = (props) => {
 				<div style={{ paddingTop: '55px', }}>
 
 					<Button style={{}}
-						onClick={() => (window.location = 'https://www.google.com')}>My CV</Button>
+						onClick={() => (window.location = linkToCV)}>My CV</Button>
 				</div>
 			</LeftSection>
 		</Section>
