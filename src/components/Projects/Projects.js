@@ -21,7 +21,7 @@ import {
 	HoverEffectButton,
 } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle, SectionText } from '../../styles/GlobalComponents';
-import { projects } from '../../constants/constants';
+import { projects, gitHubAddressProjects } from '../../constants/constants';
 import Button from '../../styles/GlobalComponents/Button';
 import 'glider-js/glider.min.css';
 import Glider, { GliderMethods } from 'react-glider';
@@ -54,7 +54,7 @@ const Projects = () => {
 			<SectionText bolder>Here are some of the projects that I have worked on:</SectionText>
 			<>
 				<Glider style={{ margin: "10px", }} slidesToScroll={1} slidesToShow={slidesToShow} draggable={true} hasDots={true} hasArrows={true}>
-					{projects.map(({ id, image, title, description, commits, branches, languages, url, live, time, teamSize }) => (
+					{projects.map(({ id, image, title, description, commits, branches, languages, code, live, time, teamSize }) => (
 						<Tilt className="Tilt" scale={0.92}>
 							<ProjectCard>
 								<CardImage imgSrc={image}></CardImage>
@@ -84,7 +84,7 @@ const Projects = () => {
 									</CardLangauges>
 								</CardBody>
 
-								<CardButtons code={url} liveApp={live} />
+								<CardButtons code={code} liveApp={live} />
 							</ProjectCard>
 						</Tilt>
 					))}{' '}
@@ -92,7 +92,7 @@ const Projects = () => {
 			</>
 			<div style={{ 'display': 'flex', 'height': '100px', 'justify-content': 'center', 'padding-top': '25px', }} >
 				<Button style={{'margin-bottom': '0px'}}
-					onClick={() => (window.location = 'https://www.google.com')}>Discover More</Button>
+					onClick={() => (window.location = gitHubAddressProjects)}>Discover More</Button>
 			</div>
 		</Section>
 	);
@@ -114,7 +114,7 @@ const Projects = () => {
 //     </TagList>
 // </div>
 // <UtilityList>
-//     <Button alt href={url}>
+//     <Button alt href={code}>
 //       Code
 //     </Button>
 //     <Button alt href={live}>
