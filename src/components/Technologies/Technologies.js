@@ -27,7 +27,10 @@ const Technologies = () => {
       <SectionDivider />
       <br />
       <SectionTitle>Technologies</SectionTitle>
-      <SectionText>I have worked with a range on technologies.</SectionText>
+      <SectionText>
+        I have worked with a range on technologies, framework and have a large set of tools in my skill set. Here is a
+        few of them:
+      </SectionText>
       <>
         <Glider
           slidesToScroll={1}

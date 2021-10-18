@@ -7,47 +7,37 @@ import animationData from '../../lotties/coder';
 import { useMediaPredicate } from 'react-media-hook';
 
 const LottieAnimation = (props) => {
+  const animationOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+  var width = 900;
+  // const [windowSize, setWindowSize] = useState([window.innerHeight, window.innerWidth]);
+  // const [windowHeight, windowWidth] = windowSize;
 
-	const animationOptions = {
-		loop: true,
-		autoplay: true,
-		animationData: animationData,
-		rendererSettings: {
-			preserveAspectRatio: 'xMidYMid slice',
-		},
-	};
-	var width = 900;
-	if (typeof window !== "undefined") {
-		const [windowSize, setWindowSize] = useState([window.innerHeight, window.innerWidth]);
-		const [windowHeight, windowWidth] = windowSize;
+  // if (windowWidth < 768) {
+  // 	width = 650;
+  // }
+  // if (windowWidth < 640) {
+  // 	width = 475;
+  // }
+  const small = useMediaPredicate('(max-width:640px)');
+  const medium = useMediaPredicate('(max-width:768px)');
+  if (small) {
+    width = 475;
+  } else if (medium) {
+    width = 650;
+  }
 
-		if (windowWidth < 768) {
-			width = 650;
-		}
-		if (windowWidth < 640) {
-			width = 475;
-		}
-		console.log('hi' + windowWidth + ' ' + width) 
-	}
-	const small = useMediaPredicate('(max-width:640px)');
-	const medium = useMediaPredicate('(max-width:768px)');
-	if (small) {
-		width = 475;
-	} else if (medium) {
-		width = 650;
-	}
-	console.log('bye ' + width) 
-
-
-	return (
-		<LottieContainer>
-			<Lottie
-				options={animationOptions}
-				height={width}
-				width={width}
-			/>
-		</LottieContainer>
-	);
+  return (
+    <LottieContainer>
+      <Lottie options={animationOptions} height={width} width={width} />
+    </LottieContainer>
+  );
 };
 
 export default LottieAnimation;
